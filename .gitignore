@@ -1,2 +1,8 @@
 # Project exclude paths
 /venv/
+
+# Token
+token.json
+
+#.idea
+/.idea

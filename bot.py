@@ -2,21 +2,11 @@ import json
 import telebot
 import time
 import random
+import os
 
-"""
-Get configuration
-Template, for example:
-{
-    "token": "YOUR TOKEN",
-    "REQUEST_KWARGS":{
-        "proxy_url": "PROXY"
-    }
-}
-"""
-with open('token.json') as json_data_file:
-    conf = json.load(json_data_file)
+token = os.environ.get('token', None)
 
-bot = telebot.TeleBot(conf['token'])
+bot = telebot.TeleBot(token)
 print(bot)
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True)
 keyboard2 = telebot.types.ReplyKeyboardMarkup(True)
